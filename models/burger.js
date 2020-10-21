@@ -6,24 +6,15 @@ var burger = {
             cb(res);
         });
     },
-    
-    MakeNew: function(cols, vals, cb) {
-        orm.MakeNew("burgers", cols, vals, function(res) {
+    MakeNew: function(newBurger, cb) {
+        orm.MakeNew(newBurger, function(res) {
             cb(res);
         });
     },
-    update: function(objColVals, condition, cb) {
-        orm.update("burgers", objColVals, condition, function(res) {
+    update: function(burgerId, cb) {
+        orm.update(burgerId, function(res) {
             cb(res);
         });
-    },
-    takeoff(condition, cb) {
-        orm.takeoff('burgers', condition, function(res) {
-            cb(res);
-        });
-    },
+    }
 };
-
-
-
 module.exports = burger;
